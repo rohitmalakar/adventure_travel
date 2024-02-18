@@ -1,0 +1,57 @@
+
+body {
+    color: #324148;
+    font-family: $font-body;
+    font-weight: $font-normal;
+}
+
+p::-moz-selection{
+    background-color:$default;
+    color:$white;
+}
+p::selection{
+    background-color:$default;
+    color:$white;
+}
+::-moz-selection{
+    background-color:$default;
+    color:$white;
+}
+::selection{
+    background-color:$default;
+    color:$white;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+}
+
+.left-0 {
+    left:0;
+}
+.top-0 {
+    top:0;
+}
+.right-0 {
+    right:0;
+}
+.bottom-0 {
+    bottom:0;
+}
+
+.z-index {
+    &-0 {
+        z-index: 0;
+    }
+    &-1 {
+        z-index: 1;
+    }
+}
+
+.letter-spacing-1 {
+    letter-spacing: 1px;
+}

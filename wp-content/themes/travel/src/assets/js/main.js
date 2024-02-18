@@ -1,0 +1,7 @@
+// @koala-prepend "vendor/jquery.min.js"
+// @koala-prepend "vendor/bootstrap.min.js"
+// @koala-prepend "vendor/popper.min.js"
+// @koala-prepend "vendor/slick.min.js"
+// @koala-prepend "vendor/smooth-scroll.js"
+// @koala-prepend "vendor/wow.min.js"
+// @koala-prepend "custom.js"

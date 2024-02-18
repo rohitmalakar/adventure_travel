@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","mappings":";;;;;AAAA;AACAA,KAAK,CAAC,MAAM,CAAC,C","sources":["webpack://travel/./src/index.js"],"sourcesContent":["// import \"./assets/css/main.min.css\";\r\nalert(\"asdf\");"],"names":["alert"],"sourceRoot":""}

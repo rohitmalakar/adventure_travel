@@ -1,0 +1,361 @@
+
+html {
+    // overflow-y: overlay;
+}
+
+.block-special {
+    // .row {
+    //     margin-right: -20%;
+    // }
+    .wrapper-right {
+        &_inside {
+            @include media-breakpoint-down(xs){
+                padding-right: 15px !important;
+            }
+        }
+    }
+    .slick {
+        &-slide {
+            overflow: hidden;
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+            img {
+                transition: 1s ease;
+                transform: scale(1);
+            }
+            @include media-breakpoint-down(sm){
+                img  {
+                    width: 100%;
+                }
+            }
+            @include media-breakpoint-up(sm){
+                margin-right: 30px;
+            }
+            position: relative;
+            .title-line {
+                position: relative;
+                padding-bottom: 15px;
+                &:after {
+                    transition: 0.4s ease;
+                    position: absolute;
+                    bottom: 0;
+                    width: 0px;
+                    opacity: 0;
+                    visibility: hidden;
+                    height: 1px;
+                    content: "";
+                    display: block;
+                    background-color: $white;
+                }
+            } // title line ends
+            &:hover {
+                .title-line {
+                    &:after {
+                        width:45px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                } // hover title line ends
+                .btn-link {
+                    opacity: 1;
+                    visibility: visible;
+                    &:after {
+                        width: 14px;
+                    }
+                } // hover btn link ends
+            }
+            .btn-link {
+                opacity: 0;
+                transition: 0.4s ease;
+                visibility: hidden;
+                &:after {
+                    transition: 1s ease;
+                    width: 7px;
+                }
+            }
+        }
+        &-caption {
+            position: absolute !important;
+            background: rgb(0,0,0);
+            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 70%);
+        } //  slick caption css ends here 
+    } // slick special css ends here
+} // block special css ends here 
+
+
+// block welcome adventure
+
+.bg-mountain {
+    // background-image: url('../images/bg-mountain.jpg');
+    // background-position: center top;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+}
+
+
+.block-welcome_img {
+    width: 256px;
+    height: 244px;
+    // background-position: center center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    position: absolute;
+    &-1 {
+        right:15px;
+        top:0;
+        z-index: 0;
+    }
+    &-2 {
+        left:15px;
+        bottom:0;
+        width: 420px;
+        z-index: 1;
+    }
+    &-3 {
+        right:0;
+        bottom:0;
+        z-index: 3;
+    }
+}
+
+.iframe-round {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    .crop {
+        padding-top: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        img {
+            display: block;
+            min-width: 100%;
+            min-height: 100%;
+            margin: auto;
+            position: absolute;
+            top: -100%;
+            right: -100%;
+            bottom: -100%;
+            left: -100%;
+        }
+    }
+}
+
+
+// block welcome adventure ends here
+
+
+// block best pick 
+
+.block-bestpick_info {
+    border-bottom:solid 1px #EAEAEA;
+}
+
+// block best pick ends here
+
+
+// block trip of month
+.block-tripofmonth {
+    .image {
+        position: relative;
+        @include media-breakpoint-up(lg){
+            margin-top:-18%;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top:0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: rgb(247,246,240);
+            @include media-breakpoint-up(md){
+                background: linear-gradient(90deg, rgba(247,246,240,0) 78%, rgba(247,246,240,1) 100%);
+            }
+            @include media-breakpoint-down(sm){
+                background: linear-gradient(180deg, rgba(247,246,240,0) 78%, rgba(247,246,240,1) 100%);
+            }
+        }
+    }
+    &_subTitle {
+        &:before {
+            height: 2px;
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 10px;
+            left: 0;
+            display: block;
+            margin-top: -1px;
+            @include media-breakpoint-up(md){
+                width: 100px;
+                left: -105px;
+            }
+            background-color: $primary;
+        }
+    }
+    &_title {
+        @include media-breakpoint-up(md){
+            margin-left: -22%;
+            z-index: 10;
+            position: relative;
+            max-width: 289px;
+        }
+        @include media-breakpoint-only(md){
+            margin-left: -42%;
+        }
+    }
+    &_price {
+        font-size: 36px;
+    }
+}
+// block trip of month ends here
+
+
+// block departure time 
+
+.block-departuredate {
+    &:before {
+        content: "";
+        display: block;
+        background-color: rgba(0,0,0,0.7);
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .table thead th {
+        border-top:0;
+        border-width: 1px;
+    }
+    .table thead th, .table th, .table td {
+        border-color: rgba(255,255,255,0.2);
+    }
+}
+
+// block departure time ends here
+
+
+// block latest article 
+
+.block-latestarticle {
+    .card {
+        border:0;
+        border-bottom: solid 1px #EAEAEA;
+        &-title {
+            @include media-breakpoint-up(md){
+                min-height: 68px;
+            }
+        }
+    }
+    .date {
+        color: #B8B8B8;
+        font-size: 14px;
+    }
+}
+
+// block latest article ends here 
+
+
+// block testimonials
+
+.block-testimonials {
+    &:before {
+        width: 100%;
+        content: "";
+        display: block;
+        background-color: $green;
+        height: 100%;
+        position: absolute;
+        top:0;
+        @include media-breakpoint-up(md){
+            width: 43%;
+            // width: 38%;
+        }
+    }
+    .wrapper-right {
+        &_inside {
+            @include media-breakpoint-down(sm){
+                padding-right: 15px !important;
+            }
+        }
+    }
+    .slick {
+        &-slide {
+            opacity: 0.5;
+            transition: 0.4s ease;
+        }
+        &-active {
+            opacity: 1;
+        }
+    }
+    .slick-list {
+        // box-shadow: 15px 30px 40px rgba(0,0,0,0.7);
+    }
+}
+
+
+.testimonial-bg {
+    background-color: #F7F6F0;
+}
+
+.testimonial{
+    &-left {
+        
+        text-align: center;
+    }
+    &-user {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        font-size: 18px;
+        &_name {
+            font-weight: $font-semi-bold;
+            color: #121212;
+        }
+        &_location {
+    
+        } // testionia
+    } // testimonial user 
+    &-content {
+        .date {
+            color: #474747;
+            font-size: 14px;
+            border-left: solid 1px #EAEAEA;
+            padding-left: 15px;
+        }
+    } // testimonial content ends here
+} // testimonial content item
+
+.rating {
+    padding-right: 10px;
+    float: left;
+    li {
+        float: left;
+        border-radius: 50%;
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        content: "";
+        display: block;
+        padding:2px 1px 1px 2px;
+        background-color: #18A581;
+        a {
+            background-color: #18A581;
+            border-radius: 50%;
+            display: block;
+            width: 19px;
+            height: 19px;
+            border:solid 5px $white;
+        }
+    }
+}
+
+// block testimonials ends here

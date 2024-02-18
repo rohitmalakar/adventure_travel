@@ -1,0 +1,32 @@
+{
+  "name": "travel",
+  "version": "1.0.0",
+  "description": "travel website by rohit malakar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js",
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "concurrent": "concurrently \"npm run start\" \"npx tailwindcss -i ./src/input.css -o ./src/output.css --watch\""
+  },
+  "author": "rohit malakar",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/scripts": "^27.2.0",
+    "axios": "^1.6.7",
+    "concurrently": "^8.2.2",
+    "tailwindcss": "^3.4.1"
+  }
+}

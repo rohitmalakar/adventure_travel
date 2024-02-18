@@ -1,0 +1,50 @@
+
+
+.btn {
+    @include media-breakpoint-up(sm){
+        padding:14px 47px;
+    }
+    color: $white;
+    &-default {
+        background-color: $default;
+        &:hover {
+            background-color: $black;
+        }
+    }
+
+    &-green {
+        padding-top: 11px 24px;
+        background-color: $green;
+        color: $white;
+        border-radius: 0;
+        &:hover {
+            color: $white;
+            background-color: $default;
+        }
+    }
+
+    &-link {
+        &:after {
+            background:url(../images/svg/arrow-right.svg) right center no-repeat;
+            content:"";
+            display: inline-block;
+            width: 14px;
+            height: 11px;
+        }
+        padding-left:0;
+        padding-top:0;
+        padding-right: 15px;
+        font-size: 14px;
+        &:hover {
+            color: $green;
+        }
+    } // btn link ends here 
+
+    &-outline-secondary {
+        color: $secondary;
+        border-color: $secondary;
+    } // btn outline secondary ends here
+} // btn ends here 
+
+
+
