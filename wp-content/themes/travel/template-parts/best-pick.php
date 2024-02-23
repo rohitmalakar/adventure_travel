@@ -25,7 +25,7 @@
                 $bestpickQuery->the_post(); ?>
                 <div class="col-md-4 wow fadeIn" data-wow-duration="1s" data-wow-delay="<?php echo $wowdelay; ?>s" data-wow-offset="50" >
                     <div class="card border-0 border-radius-0">
-                        <a href="" class="d-flex flex-column keyburn"><img src="<?php echo the_post_thumbnail_url('portrait'); ?>" class="img-fluid" alt="Best Pick"></a>
+                        <a href="<?php the_permalink(); ?>" class="d-flex flex-column keyburn"><img src="<?php echo the_post_thumbnail_url('portrait'); ?>" class="img-fluid" alt="Best Pick"></a>
                         <div class="card-body bg-white pl-0 position-absolute bottom-0 z-index-1">
                         <h4 class="mb-0"><?php echo get_the_title(); ?></h4>
                         </div>

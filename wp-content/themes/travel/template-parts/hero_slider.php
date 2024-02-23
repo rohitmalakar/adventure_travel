@@ -24,7 +24,7 @@
                     <div class="container container-md">
                       <div class="row">
                         <div class="col-md-8 col-lg-5">
-                          <h2 class="text-white">Your Adventure Travel Expert in Nepal</h2>
+                          <h2 class="text-white"><?php the_title(); ?></h2>
                           <a href="<?php the_permalink(); ?>" class="mt-3 btn btn-default border-radius-0">Get Started</a>
                         </div> <!-- slick col md 4 ends here -->
                       </div> <!-- slick row ends here -->
