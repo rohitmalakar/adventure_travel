@@ -4,38 +4,62 @@
       <div class="row py-3">
         <div class="col-sm-6 col-lg-3">
           <div class="footer-menu">
-            <span class="d-block footer-menu_title">Everest Region Trek</span>
-            <ul class="pt-2 list-unstyled clearfix">
-              <li><a href="">Everest Base Camp Trek</a></li>
-              <li><a href="">Everest Three Pass Trek</a></li>
-              <li><a href="">Jiri To Everest Base Camp Trek</a></li>
-              <li><a href="">Everest Three Pass Trek</a></li>
-              <li><a href="">Jiri To Everest Base Camp Trek</a></li>
-            </ul>
+              <?php 
+                $menu_obj = rohit_get_menu_by_location('footerMenuOne');
+                if($menu_obj){
+                  echo "<span class=\"d-block footer-menu_title\">" . $menu_obj->name  . "</span>";
+                  wp_nav_menu(array(
+                    'container'            => 'div',
+                    'menu_class'           => 'menu pt-2 list-unstyled clearfix',
+                    'echo'                 => true,
+                    'fallback_cb'          => 'wp_page_menu',
+                    'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'item_spacing'         => 'preserve',
+                    'depth'                => 0,
+                    'theme_location'       => 'footerMenuOne',
+                  ));
+                }
+              ?>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3">
           <div class="footer-menu">
-            <span class="d-block footer-menu_title">Everest Region Trek</span>
-            <ul class="pt-2 list-unstyled clearfix">
-              <li><a href="">Everest Base Camp Trek</a></li>
-              <li><a href="">Everest Three Pass Trek</a></li>
-              <li><a href="">Jiri To Everest Base Camp Trek</a></li>
-              <li><a href="">Everest Three Pass Trek</a></li>
-              <li><a href="">Jiri To Everest Base Camp Trek</a></li>
-            </ul>
+              <?php 
+                $menu_obj = rohit_get_menu_by_location('footerMenuTwo');
+                if($menu_obj){
+                  echo "<span class=\"d-block footer-menu_title\">" . $menu_obj->name  . "</span>";
+                  wp_nav_menu(array(
+                    'container'            => 'div',
+                    'menu_class'           => 'menu pt-2 list-unstyled clearfix',
+                    'echo'                 => true,
+                    'fallback_cb'          => 'wp_page_menu',
+                    'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'item_spacing'         => 'preserve',
+                    'depth'                => 0,
+                    'theme_location'       => 'footerMenuTwo',
+                  ));
+                }
+              ?>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3">
           <div class="footer-menu">
-            <span class="d-block footer-menu_title">Everest Region Trek</span>
-            <ul class="pt-2 list-unstyled clearfix">
-              <li><a href="">Everest Base Camp Trek</a></li>
-              <li><a href="">Everest Three Pass Trek</a></li>
-              <li><a href="">Jiri To Everest Base Camp Trek</a></li>
-              <li><a href="">Everest Three Pass Trek</a></li>
-              <li><a href="">Jiri To Everest Base Camp Trek</a></li>
-            </ul>
+              <?php 
+                $menu_obj = rohit_get_menu_by_location('footerMenuThree');
+                if($menu_obj){
+                  echo "<span class=\"d-block footer-menu_title\">" . $menu_obj->name  . "</span>";
+                  wp_nav_menu(array(
+                    'container'            => 'div',
+                    'menu_class'           => 'menu pt-2 list-unstyled clearfix',
+                    'echo'                 => true,
+                    'fallback_cb'          => 'wp_page_menu',
+                    'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'item_spacing'         => 'preserve',
+                    'depth'                => 0,
+                    'theme_location'       => 'footerMenuThree',
+                  ));
+                }
+              ?>
           </div>
         </div>
         <div class="col-sm-6 col-lg-3">

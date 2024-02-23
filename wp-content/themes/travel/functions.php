@@ -34,6 +34,7 @@ add_action('after_setup_theme', 'travel_features');
 
 
 
+
 // image alt tag get
 function imageAlt($postID){
   $thumbnail_id = get_post_thumbnail_id($postID);
@@ -82,6 +83,11 @@ add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
 
 
 /**
+ * Functions for getting menu title
+ */
+require get_template_directory() . '/inc/footer-menu.php';
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -107,3 +113,4 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+

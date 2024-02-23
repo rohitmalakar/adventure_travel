@@ -27,7 +27,7 @@
                 </div> <!-- card body article block ends here -->
               </div> <!-- card article block ends here -->
             </div>  <!-- col md 4 card article block ends here -->
-        <?php } ?>
+        <?php } wp_reset_query(); ?>
       </div> <!-- row card article ends here -->
     </div> <!-- container latest article ends here -->
   </div> <!-- latest article ends here -->     
