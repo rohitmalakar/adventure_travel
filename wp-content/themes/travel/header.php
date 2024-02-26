@@ -11,15 +11,47 @@
             <h1 id="logo" class="mt-0 d-none d-md-block d-lg-none">
                 <a href="<?php echo home_url(); ?>"><img alt="Adventure" src="<?php echo get_theme_file_uri(); ?>" title="Adventure" class="img-fluid"/></a>
             </h1> <!-- logo ends here -->
-            <ul class="info list-unstyled mb-0 pl-0">
-                <li class="d-inline-block mr-md-2">Nepal Gov. Reg. No: 116524/070/071</li>
-                <li class="d-inline-block">Tourism Reg. No: 1644/070</li>
-                <li class="d-inline-block">TAAN Reg No. 0668</li>
-            </ul> <!-- register info ends here -->
-            <ul class="list-unstyled pt-1 pt-md-0 mb-0 ml-auto text-md-right text-lg-left">
-                <li class="d-inline-block">Phone: +977 1 4420444</li>
-                <li class="d-inline-block pr-md-0">Cell: +977 9851052042</li>
-            </ul> <!-- call info ends here -->
+            <?php 
+                $header_footer_query = new WP_Query(array(
+                    'post_type' => 'header-footer-settin',
+                    'posts_per_page' => 1
+                ));
+                while($header_footer_query->have_posts()){
+                    $header_footer_query->the_post(); ?>
+                    <ul class="info list-unstyled mb-0 pl-0">
+                        <?php 
+                            $headerLeftTxts = get_field('header_left_text'); 
+                            $listcount = 1;
+                            foreach($headerLeftTxts as $headerLeftTxt){ 
+                                if($listcount == 1){
+                                    $fistclass = "mr-md-2";
+                                }else{
+                                    $fistclass = "";
+                                }
+                                ?>
+                                <li class="d-inline-block <?php echo $fistclass; ?>"><?php echo $headerLeftTxt['header_left_text_list']; ?></li>
+                        <?php $listcount++; } ?>
+                    </ul> <!-- register info ends here -->
+                    <ul class="list-unstyled pt-1 pt-md-0 mb-0 ml-auto text-md-right text-lg-left">
+                        <?php 
+                            $header_right_txts = get_field('header_right_text'); 
+                            $postCount = 1;
+                            foreach($header_right_txts as $header_right_txt){
+                                
+                                // echo count($header_right_txts);
+                                if($postCount == count($header_right_txts)){
+                                    $last_list_class = "pr-md-0";
+                                }else{
+                                    $last_list_class = "";
+                                }
+                                
+                                echo '<li class="d-inline-block '. $last_list_class . '">'.$header_right_txt['header_right_text_list'].'</li>';
+
+                                $postCount++;
+                            }
+                        ?>
+                    </ul> <!-- call info ends here -->
+            <?php }  ?>
             </div> <!-- d flex header info ends here -->
         </div> <!-- header info contianer ends here -->
         </div> <!-- bg-default py-2 masthead-info ends here -->

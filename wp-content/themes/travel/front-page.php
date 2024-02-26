@@ -30,103 +30,57 @@
         <div class="col-md-8 px-md-0 wrapper-right">
           <div class="wrapper-right_inside">
             <div class="slick-testimonials">
-              <div>
-                <div class="row no-gutters align-items-center h-100 testimonial-bg">
-                    <div class="col-sm-4 py-5 testimonial-left">
-                      <div class="px-4">
-                        <div class="testimonial-user mx-auto">
-                            <img src="<?php echo get_theme_file_uri(); ?>/src/assets/images/img-special.jpg" alt="Testimonials">
-                        </div>
-                        <div class="testimonial-user_name text-black pt-3">
-                          Chris Adams
-                        </div>       
-                        <div class="testimonial-user_location pt-1">
-                          Cape Town Central, South Africa
-                        </div>
-                      </div>              
-                    </div><!-- col 4 user pics ends here -->
-                    <div class="col-sm-8 py-5 bg-white">
-                      <div class="px-4 testimonial-content">
-                        <h4>Manaslu circuit with group of 5</h4>
-                        <div class="float-left">
-                          <ul class="mb-0 rating list-unstyled">
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                          </ul>of 25 Reviews</div> 
-                        <div class="d-inline-block ml-2 pl-2 mt-2 mt-sm-0 date mb-3 mb-xl-0">December, 23, 2018</div>
-                        
-                        <p class="mt-2">Thanks to NEST for organizing this wonderful trek and facilitating this amazing experience. NT our guide was excellent. He was always around to help and showed flexibility to ensure we where coping with every challenging day. He always had a joke on hand when things...</p>
-                      </div>
-                  </div> <!-- col-8 testimonials ends here -->
-                </div> <!-- row testimonials ends here -->               
-              </div> <!-- our special slider item ends here -->
-
               
-              <div>
-                <div class="row no-gutters align-items-center h-100 testimonial-bg">
-                    <div class="col-sm-4 py-5 testimonial-left">
-                      <div class="px-4">
-                        <div class="testimonial-user mx-auto">
-                            <img src="<?php echo get_theme_file_uri(); ?>/src/assets/images/img-special.jpg" alt="Testimonials">
-                        </div>
-                        <div class="testimonial-user_name text-black pt-3">
-                          Chris Adams
-                        </div>       
-                        <div class="testimonial-user_location pt-1">
-                          Cape Town Central, South Africa
-                        </div>
-                      </div>              
-                    </div><!-- col 4 user pics ends here -->
-                    <div class="col-sm-8 py-5 bg-white">
-                      <div class="px-4 testimonial-content">
-                        <h4>Manaslu circuit with group of 5</h4>
-                        <div class="float-left">
-                          <ul class="mb-0 rating list-unstyled">
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                          </ul>of 25 Reviews</div> 
-                        <div class="d-inline-block ml-2 pl-2 mt-2 mt-sm-0 date mb-3 mb-xl-0">December, 23, 2018</div>
+              <?php 
+                $testimonialquery = new WP_Query(array(
+                  'post_type' => 'testimonial',
+                  'posts_per_page' => -1
+                ));
+                while($testimonialquery->have_posts()){
+                  $testimonialquery->the_post(); ?>
+                  <div>
+                    <div class="row no-gutters align-items-center h-100 testimonial-bg">
+                        <div class="col-sm-4 py-5 testimonial-left">
+                          <div class="px-4">
+                            <div class="testimonial-user mx-auto">
+                                <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'thumbnail', array()); ?>" alt="Testimonials">
+                            </div>
+                            <div class="testimonial-user_name text-black pt-3">
+                              <?php the_field('review_author');?>
+                            </div>       
+                            <div class="testimonial-user_location pt-1">
+                              <?php the_field('address');?>
+                              
+                            </div>
+                          </div>              
+                        </div><!-- col 4 user pics ends here -->
                         
-                        <p class="mt-2">Thanks to NEST for organizing this wonderful trek and facilitating this amazing experience. NT our guide was excellent. He was always around to help and showed flexibility to ensure we where coping with every challenging day. He always had a joke on hand when things...</p>
-                      </div>
-                  </div> <!-- col-8 testimonials ends here -->
-                </div> <!-- row testimonials ends here -->               
-              </div> <!-- our special slider item ends here -->
-
-              <div>
-                <div class="row no-gutters align-items-center h-100 testimonial-bg">
-                    <div class="col-sm-4 py-5 testimonial-left">
-                      <div class="px-4">
-                        <div class="testimonial-user mx-auto">
-                            <img src="<?php echo get_theme_file_uri(); ?>/src/assets/images/img-special.jpg" alt="Testimonials">
-                        </div>
-                        <div class="testimonial-user_name text-black pt-3">
-                          Chris Adams
-                        </div>       
-                        <div class="testimonial-user_location pt-1">
-                          Cape Town Central, South Africa
-                        </div>
-                      </div>              
-                    </div><!-- col 4 user pics ends here -->
-                    <div class="col-sm-8 py-5 bg-white">
-                      <div class="px-4 testimonial-content">
-                        <h4>Manaslu circuit with group of 5</h4>
-                        <div class="float-left">
-                          <ul class="mb-0 rating list-unstyled">
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                          </ul>of 25 Reviews</div> 
-                        <div class="d-inline-block ml-2 pl-2 mt-2 mt-sm-0 date mb-3 mb-xl-0">December, 23, 2018</div>
-                        
-                        <p class="mt-2">Thanks to NEST for organizing this wonderful trek and facilitating this amazing experience. NT our guide was excellent. He was always around to help and showed flexibility to ensure we where coping with every challenging day. He always had a joke on hand when things...</p>
-                      </div>
-                  </div> <!-- col-8 testimonials ends here -->
-                </div> <!-- row testimonials ends here -->               
-              </div> <!-- our special slider item ends here -->
-
+                        <div class="col-sm-8 py-5 bg-white">
+                          <div class="px-4 testimonial-content">
+                            <h4><?php echo get_the_title(); ?></h4>
+                            <div class="float-left">
+                              <ul class="mb-0 rating list-unstyled">
+                                <?php 
+                                  $ratings = get_field('rating');
+                                  $i = 1;
+                                    while ($i <= $ratings) {
+                                      echo '<li><a href=""></a></li>';
+                                      $i++;
+                                    }
+                                ?>
+                              </ul>of <?php the_field('rated_by_number_of_people'); ?> Reviews</div> 
+                            <div class="d-inline-block ml-2 pl-2 mt-2 mt-sm-0 date mb-3 mb-xl-0">
+                              <?php 
+                                the_date('F, d, Y');
+                              ?>
+                            </div>
+                            
+                            <div class="mt-2"><?php the_content(); ?></div>
+                          </div>
+                      </div> <!-- col-8 testimonials ends here -->
+                    </div> <!-- row testimonials ends here -->               
+                  </div> <!-- our special slider item ends here -->
+              <?php } wp_reset_query(); ?>
 
             </div> <!-- our special slider ends here -->
           </div>

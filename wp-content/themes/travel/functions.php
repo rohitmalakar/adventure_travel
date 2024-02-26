@@ -1,6 +1,7 @@
 <?php 
 
 function travel_files(){
+    // wp_enqueue_style('travel_tailwind_styles', get_theme_file_uri('/src/output.css'));
     wp_enqueue_style('google-font', '//fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
     wp_enqueue_style('travel_main_styles', get_theme_file_uri('/src/assets/css/main.min.css'));
     wp_enqueue_script('main-travel-js', get_theme_file_uri('/src/assets/js/main.min.js'), array(), '1.0', true);

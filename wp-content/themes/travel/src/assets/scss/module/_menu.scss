@@ -59,7 +59,7 @@
 .submenu {
     position: relative;
     // @include media-breakpoint-up(md){
-        &:after {
+        &.menu-item-has-children:after {
             @include media-breakpoint-down(sm){
                 position: absolute;
                 right:0;

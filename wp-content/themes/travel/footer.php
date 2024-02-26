@@ -80,13 +80,19 @@
         <!-- footer 4 list menu + form ends here -->
         <div class="col-12 pt-5">
           <div class="c-association pt-5 text-center">
-            <ul class="list-unstyled">
-              <li class="pb-4 pb-lg-0 px-4"><img src="<?php echo get_theme_file_uri(); ?>/src/assets/images/logo-tourism.jpg" alt="Tourism"></li>
-              <li class="pb-4 pb-lg-0 px-4"><img src="<?php echo get_theme_file_uri(); ?>/src/assets/images/logo-ntb.jpg" alt="NTB"></li>
-              <li class="pb-4 pb-lg-0 px-4"><img src="<?php echo get_theme_file_uri(); ?>/src/assets/images/logo-nma.jpg" alt="NMA"></li>
-              <li class="pb-4 pb-lg-0 px-4"><img src="<?php echo get_theme_file_uri(); ?>/src/assets/images/logo-taan.jpg" alt="Taan"></li>
-              <li class="pb-4 pb-lg-0 px-4"><img src="<?php echo get_theme_file_uri(); ?>/src/assets/images/logo-keep.jpg" alt="keep"></li>
-              <li class="pb-4 pb-lg-0 px-4"><img src="<?php echo get_theme_file_uri(); ?>/src/assets/images/logo-tripadvisor.jpg" alt="Tripadvisor"></li>
+          <ul class="list-unstyled">
+                <?php 
+                $header_footer_query = new WP_Query(array(
+                  'post_type' => 'header-footer-settin',
+                  'posts_per_page' => 1
+                ));
+                while($header_footer_query->have_posts()){
+                  $header_footer_query->the_post();
+                  foreach(get_field('footer_logo') as $footerlogo){
+                    echo  '<li class="pb-4 pb-lg-0 px-4"><img src="'. $footerlogo['footer_logo_images']['sizes']['medium_large'] . '" alt="Tourism"></li>';
+                  }
+                }
+                ?>
             </ul>
           </div>
         </div>
@@ -94,8 +100,16 @@
     </div> <!-- first footer container ends here -->
     <div class="container z-index-1 position-relative c-copyright">
       <div class="row py-4 d-flex justify-content-between align-items-center">
-        <div class="col-md-8">© 2019 Nepal Explore Summit Trek Pvt. Ltd. All Rights Reserved.</div>
-        <div class="col-md-4 pt-1 pt-md-0 text-md-right">Designed & Developed by: <span class="d-md-block"></span> <a href="https://codewing.co/" target="_blank" title="Designed & Developed by: Codewing Solutions">Codewing Solutions</a></div>
+          <?php 
+            while($header_footer_query->have_posts()){
+              $header_footer_query->the_post(); ?>
+              <div class="col-md-8">
+                <?php the_field('footer_left_text'); ?>
+              </div>
+              <div class="col-md-4 pt-1 pt-md-0 text-md-right">
+                <?php the_field('footer_right_text'); ?>
+              </div>
+          <?php } wp_reset_query(); ?>
       </div>
     </div>
   </footer>
